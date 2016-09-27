@@ -35,7 +35,15 @@ rl.on('line', (line) => {
   }
   else {
     rl.setPrompt("Type another a word?");
-    kata.push(line.trim());
+    var flag=0;
+    for(var l=0; l<kata.length; l++) {
+      if(kata[l].toLowerCase() == line.trim().toLowerCase()) {
+        flag = 1;
+      }
+    }
+    if(flag == 0) {
+      kata.push(line.trim());
+    }
   }
   rl.prompt();
 }).on('close', () => {
