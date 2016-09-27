@@ -45,22 +45,25 @@ const readline = require('readline');
 
 const rl = readline.createInterface({
   input: process.stdin,
-  output: process.stdout
+  output: process.stdout,
 });
 
 rl.setPrompt("Type a word or type 'quit' to close : ");
-
+rl.prompt();
 rl.on('line', (line) => {
 
   if (line === 'quit') {
     rl.close();
   }
-  else if (line === '') {
+  else if (line === '' && words.length > 0) {
     words = dictionary_sort(words);
     console.log("Congratulations! Your dictionary has " + words.length + " words");
     for (var i = 0; i < words.length; i++) {
       console.log(words[i]);
     }
+  }
+  else if(line === '' && words.length === 0) {
+    dictionary_sort(words);
   }
   else {
     add_words(line);
