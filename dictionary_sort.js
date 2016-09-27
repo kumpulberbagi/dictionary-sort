@@ -28,8 +28,6 @@ rl.on('line', (line) => {
   }
  });
 
-
-
  function sort(arr) {
   for(var i = 0; i < arr.length; i += 1) {
     var c = swap(arr, i, index_min(arr, i));
@@ -48,15 +46,15 @@ function swap(array, first, second) {
 
 
 
-function index_min(array, startIndex) {
-  var minValue = array[startIndex];
-  var minIndex = startIndex;
+function index_min(array, index) {
+  var min_value = array[index];
+  var min_index = index;
 
-    for(var i = minIndex + 1; i < array.length; i++) {
-        if(array[i] < minValue) {
-            minIndex = i;
-            minValue = array[i];
+    for(var i = min_index + 1; i < array.length; i++) {
+        if(array[i] < min_value) {
+            min_index = i;
+            min_value = array[i];
         }
     }
-    return minIndex;
+    return min_index;
 }
