@@ -30,7 +30,6 @@ rl.prompt();
 
 rl.on('line', (line) => {
 
-
   if(line.trim() == "") {
     rl.close();
   }
