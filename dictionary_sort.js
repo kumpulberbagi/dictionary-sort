@@ -1,7 +1,14 @@
 function dictionary_sort(arr) {
   // Your code here to sort the array
+  var smallest = arr[0]
+  var smallIndex = 0
   for (var i = 0; i < arr.length; i++) {
-
+    if (arr[i] < arr[smallest]){
+      smallest = arr[i]
+      smallIndex = i
+      var temp2 = smallest
+      arr.splice(arr)
+    }
   }
 
 }
@@ -24,3 +31,4 @@ rl.on('line', (input) => {
     rl.prompt();
   }
 })
+
