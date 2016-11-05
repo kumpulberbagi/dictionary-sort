@@ -1,5 +1,17 @@
+"use strict"
+
+const readline = require('readline');
+
 function dictionary_sort(arr) {
-  // Your code here to sort the array
+    const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout
+    });
+    console.log('Type a word:');
+    rl.on('line',(input)=>{
+      //console.log(input);
+    })
+
 }
 
-// your code here to initialize the program and take user input
+dictionary_sort()
