@@ -10,13 +10,16 @@ function dictionary_sort(arr) {
     });
     console.log('Type a word:');
     rl.on('line',(input)=>{
-      tampung.push(input.toLowerCase())
+      tampung.push(input)
       console.log('Type another word (or press enter to finish):');
       if(input==""){
-        var hasil = tampung.sort();
-        console.log(`Congratulations! Your dictionary has ${hasil.length-1} words:`)
-        for (var i = 1; i < hasil.length; i++) {
-          console.log(hasil[i])
+        tampung.sort(function(a,b){
+          return a.toLowerCase().localeCompare(b.toLowerCase());
+          //localcompare to sort() : Huruf Besar Tidak Akan didahulukan, sistem tetap akan membaca alfabet baik itu huruf besar / huruf kecil
+        });
+        console.log(`Congratulations! Your dictionary has ${tampung.length-1} words:`)
+        for (var i = 1; i < tampung.length; i++) {
+          console.log(tampung[i])
         }
         rl.close();
       }
